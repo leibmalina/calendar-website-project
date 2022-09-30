@@ -1,0 +1,204 @@
+body {
+    background-color: lightgoldenrodyellow;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* -------------------- Login State -------------------- */
+
+div.login_state {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    font-size: large;
+}
+
+input[id="login_btn"], input[id="logout_btn"], input[id="create_account_btn"] {
+    background: none;
+    border: none;
+    color: darkblue;
+    font-weight: bold;
+    font-size: large;
+    text-decoration: underline;
+}
+
+/* -------------------- Month Adjuster ---------- */
+
+.month {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    margin: 0 auto 0 auto;
+}
+
+.month > [id="month_label"] {
+    text-align: center;
+    width: 20%;
+}
+
+.month > input {
+    font-size: x-large;
+    padding: 0;
+    width: min-content;
+    height: min-content;
+}
+
+.month > div {
+    flex: 1;
+    text-align: right;
+}
+
+input[id="add_event"] {
+    font-size: xx-large;
+    width: min-content;
+    height: min-content;
+}
+
+/* -------------------- Calendar ----------*/
+
+table {
+    margin: 0 auto 0 auto;
+    width: 70vw;
+    height: 70vh;
+    border-style: solid;
+    font-size: large;
+}
+
+th {
+    border-style: solid;
+    width: 14.2857%;
+}
+
+/* day within the current month*/
+.valid_day {
+    border-style: solid;
+    height: 15%;
+}
+
+/* day not within the current month*/
+.invalid_day {
+    opacity: 15%;
+    height: 15%;
+    background: black;
+}
+
+.today {
+    background: mediumseagreen;
+}
+
+.day_contents {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.event_button {
+    border-radius: 5px;
+    border-style: none;
+    background-color: powderblue;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 2px;
+    margin: 2px auto 2px auto;
+}
+
+/* -------------------- Toggle Tags -------------------- */
+
+div[id="tag_panel"] {
+    position: fixed;
+    top: 20%;
+    right: 0;
+    border-radius: 16px 0 0 16px;
+    border: medium solid black;
+    border-right: none;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: lightsteelblue;
+}
+
+div[id="tag_panel"] > div {
+    text-align: center;
+}
+
+div[id="tag_panel"] > label > input {
+    margin-right: 10px;
+}
+
+/* -------------------- Login and Event UI ------------------ */
+
+.login_window, .event_window, .create_account_window {
+    position: absolute;
+    width: 400px;
+    height: 250px;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+
+    background-color: lightsteelblue;
+    border-color: black;
+    border-style: solid;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    justify-content: space-evenly;
+
+    visibility: hidden;
+}
+
+div[id="login_info"], div[id="create_account_info"] {
+    text-align: center;
+}
+
+.event_window {
+    text-align: center;
+    height: 500px;
+}
+
+.login_window > h2,
+.create_account_window,
+.event_window > h2 {
+    text-align: center;
+}
+
+.login_window > *,
+.create_account_window > *,
+.event_window > * {
+    padding: 0;
+    margin: 0;
+}
+
+.login_buttons, .event_buttons {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+input[id="event_delete"], input[id="event_update"] {
+    display: none;
+}
+
+input[id="login_submit"], input[id="login_cancel"],
+input[id="create_account_submit"], input[id="create_account_cancel"],
+input[id="event_submit"], input[id="event_update"], input[id="event_cancel"], input[id="event_delete"] {
+    width: 20%;
+    min-width: min-content;
+    font-size: large;
+    margin: 0 auto 0 auto;
+}
+
+.login_window > label > [type="text"],
+.login_window > label > [type="password"] {
+    margin-right: 10%;
+}

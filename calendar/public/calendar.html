@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendar</title>
+    <link rel="stylesheet" type="text/css" href="calendar.css">
+    <script src="scripts/js/calendar_lib.js"></script>
+    <script src="scripts/js/user.js"></script>
+    <script src="scripts/js/communication/accounts.js"></script>
+    <script src="scripts/js/communication/events.js"></script>
+    <script src="scripts/js/operations.js"></script>
+    <script src="scripts/js/event_handlers.js"></script>
+</head>
+<body>
+
+<h1>Calendar</h1>
+<div class="login_state">
+    <input type="button" value="Login" id="login_btn">
+    <input type="button" value="Create Account" id="create_account_btn">
+    <input type="button" value="Logout" id="logout_btn">
+</div>
+
+<div class="month">
+    <div></div>
+    <input type="button" id="prev_month" value="&lt;">
+    <h2 id="month_label">January, 2021</h2>
+    <input type="button" id="next_month" value=">">
+    <div>
+        <input type="button" id="add_event" value="+">
+    </div>
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thr</th>
+        <th>Fri</th>
+        <th>Sat</th>
+    </tr>
+    </thead>
+    <tbody id="calendar_tbody">
+
+    </tbody>
+</table>
+
+<div id="tag_panel">
+    <div>Tags</div>
+</div>
+
+<form class="login_window" id="login_window">
+    <h2>Login</h2>
+    <label>Name:
+        <input type="text" maxlength="15" name="username" id="login_username" placeholder="Username">
+    </label>
+    <label>Password:
+        <input type="password" maxlength="30" name="password" id="login_password" placeholder="Password">
+    </label>
+    <div id="login_info"></div>
+    <div class="login_buttons">
+        <input type="button" value="Login" id="login_submit">
+        <input type="button" value="Cancel" id="login_cancel">
+    </div>
+</form>
+
+<form class="create_account_window" id="create_account_window">
+    <h2>Create Account</h2>
+    <label>Username:
+        <input type="text" maxlength="15" name="username" id="create_username" placeholder="Username">
+        <br/>
+        3-15 long, can contain a-z, A-Z, 0-9 and _
+    </label>
+    <label>Password:
+        <input type="password" maxlength="30" name="password" id="create_password" placeholder="Password">
+        <br/>
+        8-30 long, can contain a-z, A-Z, 0-9 and _
+    </label>
+    <div id="create_account_info"></div>
+    <div class="create_account_buttons">
+        <input type="button" value="Create Account" id="create_account_submit">
+        <input type="button" value="Cancel" id="create_account_cancel">
+    </div>
+</form>
+
+<form class="event_window" id="event_window">
+    <h2>Event</h2>
+    <label>Title:
+        <input type="text" maxlength="50" name="title" id="event_title">
+    </label>
+    <label>Date:
+        <input type="date" max="2999-12-31" name="date" id="event_date">
+    </label>
+    <label>Time:
+        <input type="time" name="time" id="event_time">
+    </label>
+    <label>Tags: (separate tags with space)
+        <input type="text" maxlength="100" name="tags" id="event_tags">
+    </label>
+    <label>Share with: (separate user name with space)
+        <input type="text" maxlength="100" name="share" id="event_share">
+    </label>
+    <label>Group:
+        <select name="group" id="event_group">
+            <option value="none" selected>none</option>
+        </select>
+    </label>
+    <input type="hidden" name="token" value="" id="event_token"/>
+    <div class="event_buttons">
+        <input type="button" value="Create" id="event_submit">
+        <input type="button" value="Update" id="event_update">
+        <input type="button" value="Delete" id="event_delete">
+        <input type="button" value="Cancel" id="event_cancel">
+    </div>
+    <input type="hidden" name="eid" id="event_eid">
+</form>
+</body>
+</html>
